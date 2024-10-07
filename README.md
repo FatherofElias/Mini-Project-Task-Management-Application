@@ -1,6 +1,6 @@
 # Task Management Application
 
-Welcome to the Task Management Application! This application is designed to help you manage your tasks efficiently and effectively. Below, you'll find a guide on how to use the application and understand its features.
+Welcome to the Task Management Application! This application is designed to help you manage your tasks efficiently and effectively. Below, you'll find a guide on the application and understand its features.
 
 
 
