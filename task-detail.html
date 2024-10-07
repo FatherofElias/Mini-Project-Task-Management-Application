@@ -8,48 +8,98 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </head>
 <body>
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">Task Manager</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link" href="#">Home</a>
-        </li>
-        <li class="nav-item active">
-          <a class="nav-link" href="#">Dashboard <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Register</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Login</a>
-        </li>
-      </ul>
-    </div>
-  </nav>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Task Manager</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="TaskManager.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="task-dashboard.html">Dashboard</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="register.html">Register</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="authentication.html">Login</a>
+              </li>
+              <li class="nav-item"></li>
+                <a class="nav-link" href="task-detail.html">Task Details</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="task-create.html">Create Task</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
 
-  <!-- Task Details -->
+
   <div class="container mt-4">
     <h1 class="mb-4">Task Details</h1>
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title">Task Title</h5>
-        <p class="card-text">Detailed description of the task.</p>
-        <form>
-          <div class="mb-3">
-            <label for="editTaskTitle" class="form-label">Edit Task Title</label>
-            <input type="text" class="form-control" id="editTaskTitle" value="Task Title">
+    <div class="accordion" id="taskDetailsAccordion">
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingOne">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+            Task Information
+          </button>
+        </h2>
+        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#taskDetailsAccordion">
+          <div class="accordion-body">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Laundry <span class="badge bg-primary">High</span></h5>
+                <p class="card-text">Get The Laundry Done ASAP.</p>
+                <form>
+                  <div class="mb-3">
+                    <label for="editTaskTitle" class="form-label">Edit Task Title</label>
+                    <input type="text" class="form-control" id="editTaskTitle" value="Task Title">
+                  </div>
+                  <div class="mb-3">
+                    <label for="editTaskDescription" class="form-label">Edit Task Description</label>
+                    <textarea class="form-control" id="editTaskDescription" rows="3">Detailed description of the task.</textarea>
+                  </div>
+                  <div class="mb-3">
+                    <label for="editTaskPriority" class="form-label">Task Priority</label>
+                    <select class="form-select" id="editTaskPriority">
+                      <option selected>High</option>
+                      <option value="1">Medium</option>
+                      <option value="2">Low</option>
+                    </select>
+                  </div>
+                  <div class="mb-3">
+                    <label for="editTaskDueDate" class="form-label">Due Date</label>
+                    <input type="date" class="form-control" id="editTaskDueDate" value="2024-10-01">
+                  </div>
+                  <button type="submit" class="btn btn-primary">Save Changes</button>
+                </form>
+              </div>
+            </div>
           </div>
-          <div class="mb-3">
-            <label for="editTaskDescription" class="form-label">Edit Task Description</label>
-            <textarea class="form-control" id="editTaskDescription" rows="3">Detailed description of the task.</textarea>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingTwo">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+            FAQ
+          </button>
+        </h2>
+        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#taskDetailsAccordion">
+          <div class="accordion-body">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Frequently Asked Questions</h5>
+                <p class="card-text">Here you can find answers to common questions about tasks.</p>
+                <p class="card-text">How Do I Create a Task? CLICK Create Task @ The Top of this page.</p>
+              </div>
+            </div>
           </div>
-          <button type="submit" class="btn btn-primary">Save Changes</button>
-        </form>
+        </div>
       </div>
     </div>
   </div>
